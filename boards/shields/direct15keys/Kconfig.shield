@@ -1,0 +1,2 @@
+config SHIELD_direct15keys
+    def_bool $(shields_list_contains, direct15keys )

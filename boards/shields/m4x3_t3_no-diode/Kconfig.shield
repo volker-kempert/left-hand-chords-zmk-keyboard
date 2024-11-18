@@ -1,2 +1,0 @@
-config SHIELD_M4X3_T3_NODIODE
-    def_bool $(shields_list_contains, M4x3T3NoDiode )

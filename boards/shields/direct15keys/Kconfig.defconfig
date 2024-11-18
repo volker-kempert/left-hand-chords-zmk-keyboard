@@ -1,4 +1,4 @@
-if SHIELD_M4X3_T3_NODIODE
+if SHIELD_direct15keys
 
 config ZMK_KEYBOARD_NAME
     default "single-15-keys"
