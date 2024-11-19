@@ -38,6 +38,8 @@ And now the build
 rm -rf build
 mkdir build
 west build -s zmk/app -b nice_nano_v2 -d build --  \
-   -DZMK_CONFIG=config/m4x3_t3_no-diode.conf \ -DSHIELD="direct15keys" \
-   -DZMK_EXTRA_MODULES=$(pwd)  # it is important to not use . as the path
+   -DZMK_CONFIG="$(pwd)/config" \
+   -DSHIELD="direct15keys"
 ```
+
+this is also part of the module search path
