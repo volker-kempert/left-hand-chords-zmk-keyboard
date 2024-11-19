@@ -1,7 +1,7 @@
 if SHIELD_direct15keys
 
 config ZMK_KEYBOARD_NAME
-    default "single-15-keys"
+    default "single-hand-15"
 
 endif
 
