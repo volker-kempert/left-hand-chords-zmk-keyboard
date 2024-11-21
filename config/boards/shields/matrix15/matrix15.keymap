@@ -1,0 +1,70 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+#define DEFAULT  0
+#define NUM_SYM  1
+#define NAV_FUNC 2
+#define COMMAND  3
+
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+          display-name = "LETTER";
+          bindings = <
+              &kp LSHIFT        &kp N       &kp R         &kp T
+              &kp LSHIFT        &kp A       &kp E         &kp O
+              &mt LALT CAPSLOCK &kp SPACE   &kp I         &kp S
+
+              &kp LCTRL  &tog NUM_SYM  &tog NAV_FUNC
+          >;
+        };
+
+        numbers_and_symbols_layer {
+          display-name = "NU_SY";
+          bindings = <
+              &kp MINUS  &kp N7      &kp N8        &kp N9
+              &kp N0     &kp N4      &kp N5        &kp N6
+              &kp PLUS   &kp N1      &kp N2        &kp N3
+
+              &trans &trans &trans
+          >;
+        };
+
+        navigation_and_functions_layer {
+          display-name = "NU_SY";
+          bindings = <
+              &kp PG_UP  &kp DEL     &kp UP      &kp BACKSPACE
+              &kp LGUI   &kp LEFT    &kp DOWN    &kp RIGHT
+              &kp PG_DN  &kp HOME    &kp ESC     &kp END
+
+              &trans &trans &trans
+          >;
+        };
+
+        func {
+          display-name = "CMD";
+          bindings = <
+            &sys_reset      &ext_power EP_ON   &out OUT_USB    &bootloader
+            &none           &ext_power EP_ON   &out OUT_BLE    &bt BT_CLR
+            &none           &bt BT_SEL 0       &bt BT_SEL 1    &bt BT_SEL 2
+
+            &trans          &none           &none
+          >;
+        };
+    };
+
+    conditional_layers {
+      compatible = "zmk,conditional-layers";
+      tri_layer {
+            if-layers = < NUM_SYM NAV_FUNC >;
+            then-layer = < COMMAND >;
+        };
+    };
+
+};

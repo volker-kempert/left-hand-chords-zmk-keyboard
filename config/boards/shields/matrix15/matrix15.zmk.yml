@@ -1,0 +1,11 @@
+file_format: "1"
+id: matrix15
+name: Matrix15Keys
+type: shield
+url: https://github.com/volker-kempert/left-hand-chords-zmk-keyboard
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+
