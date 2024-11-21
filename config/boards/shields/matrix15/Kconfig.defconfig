@@ -1,7 +1,7 @@
 if SHIELD_MATRIX15
 
 config ZMK_KEYBOARD_NAME
-    default "Accord"
+    default "Chords"
 
 if ZMK_DISPLAY
 

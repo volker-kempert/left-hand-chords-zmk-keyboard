@@ -1,7 +1,7 @@
-if SHIELD_direct15keys
+if SHIELD_DIRECT15
 
 config ZMK_KEYBOARD_NAME
-    default "zmk-kbd-vkrt"
+    default "Chords"
 
 if ZMK_DISPLAY
 
@@ -30,4 +30,4 @@ endchoice
 
 endif # LVGL
 
-endif # SHIELD_direct15keys
+endif # SHIELD_DIRECT15

@@ -42,4 +42,6 @@ west build -s zmk/app -b nice_nano_v2 -d build --  \
    -DSHIELD="matrix15"
 ```
 
-this is also part of the module search path
+The alternative shield with direct wiring is `direct15`
+
+
