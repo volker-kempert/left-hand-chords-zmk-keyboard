@@ -11,29 +11,29 @@
 		/* switches are connected to the GND if pressed --> pull up and low active */
 		input-gpios
 			/* pinky  0..2 */
-            = <&pro_micro 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 5  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
 			/* ring finger  3..5 */
-			, <&pro_micro 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&pro_micro 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 8  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 9  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
 			/* middle finger  6..8 */
-			, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
 			/* index finger  9..11 */
-            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
 			/* thumb   12..14 */
-            , <&gpio1     1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio1     2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1     7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1     1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&gpio1     2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1     7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 			;
 
 	};
