@@ -7,10 +7,109 @@
 #define DEFAULT  0
 #define NUM_SYM  1
 #define NAV_FUNC 2
-#define COMMAND  3
+
+
+#define COMBO(LAYER, NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYER>; \
+  };
+
 
 
 / {
+
+    combos {
+      compatible = "zmk,combos";
+
+
+      COMBO( DEFAULT, L, &kp L, 1 11)
+      COMBO( DEFAULT, G, &kp G, 2 11)
+      COMBO( DEFAULT, W, &kp W, 5 11)
+      COMBO( DEFAULT, K, &kp K, 6 11)
+      COMBO( DEFAULT, ENTER, &kp ENTER, 9 11)
+      COMBO( DEFAULT, F, &kp F, 10 11)
+
+      COMBO( DEFAULT, C, &kp C, 1 7)
+      COMBO( DEFAULT, H, &kp H, 2 7)
+      COMBO( DEFAULT, DE_Y, &kp Z, 5 7)
+      COMBO( DEFAULT, D, &kp D, 6 7)
+      COMBO( DEFAULT, TAB, &kp TAB, 9 7)
+      COMBO( DEFAULT, U, &kp U, 10 7)
+
+      COMBO( DEFAULT, X, &kp X, 1 3)
+      COMBO( DEFAULT, V, &kp V, 2 3)
+      COMBO( DEFAULT, B, &kp B, 5 3)
+      COMBO( DEFAULT, M, &kp M, 6 3)
+      COMBO( DEFAULT, SHIFT_TAB, &kp LS(TAB), 9 3)
+      COMBO( DEFAULT, Q, &kp Q, 10 3)
+
+      COMBO( DEFAULT, P, &kp P, 1 10)
+      COMBO( DEFAULT, DE_Z, &kp Y, 5 10)
+      COMBO( DEFAULT, COMMA, &kp COMMA, 9 10)
+
+      COMBO( DEFAULT, J, &kp J, 1 6)
+      COMBO( DEFAULT, O_UML, &kp SEMICOLON, 5 6)
+      COMBO( DEFAULT, PERIOD, &kp PERIOD, 9 6)
+
+      COMBO( DEFAULT, U_UML, &kp LEFT_BRACKET, 1 2)
+      COMBO( DEFAULT, A_UML, &kp SINGLE_QUOTE, 5 2)
+      COMBO( DEFAULT, SZ, &kp MINUS, 9 2)
+
+      COMBO( NUM_SYM, DE_UNDERSCORE, &kp LS(SLASH), 1 11)
+      COMBO( NUM_SYM, EXCLAMATION, &kp EXCLAMATION, 2 11)
+      COMBO( NUM_SYM, DE_EQUAL, &kp LS(N0), 5 11)
+      COMBO( NUM_SYM, DE_QUESTION, &kp LS(MINUS), 6 11)
+      COMBO( NUM_SYM, DE_COLON, &kp LS(PERIOD), 9 11)
+      COMBO( NUM_SYM, DE_SEMICOLON, &kp LS(COMMA), 10 11)
+
+      COMBO( NUM_SYM, DE_DEGREE, &kp LS(GRAVE), 0 7)
+      COMBO( NUM_SYM, DE_LEFT_BRACKET, &kp RA(N8), 1 7)
+      COMBO( NUM_SYM, DE_RIGHT_BRACKET, &kp RA(N9), 2 7)
+      COMBO( NUM_SYM, DE_CARET, &kp GRAVE, 4 7)
+      COMBO( NUM_SYM, DE_LEFT_BRACE, &kp RA(N7), 5 7)
+      COMBO( NUM_SYM, DE_RIGHT_BRACE, &kp RA(N0), 6 7)
+      COMBO( NUM_SYM, DE_SINGLE_QUOTE, &kp LS(BACKSLASH), 9 7)
+      COMBO( NUM_SYM, DE_QUOTE, &kp LS(N2), 10 7)
+
+      COMBO( NUM_SYM, DOLLAR, &kp DOLLAR, 0 3)
+      COMBO( NUM_SYM, DE_LESS_THAN, &kp NON_US_BACKSLASH, 1 3)
+      COMBO( NUM_SYM, DE_GREATER_THAN, &kp LS(NON_US_BACKSLASH), 2 3)
+      COMBO( NUM_SYM, DE_EURO, &kp RA(E), 4 3)
+      COMBO( NUM_SYM, DE_LEFT_PARENTHESIS, &kp LS(N8), 5 3)
+      COMBO( NUM_SYM, DE_RIGHT_PARENTHESIS, &kp LS(N9), 6 3)
+      COMBO( NUM_SYM, DE_MICRO, &kp RA(M), 8 3)
+      COMBO( NUM_SYM, DE_BACKSLASH, &kp RA(MINUS), 9 3)
+      COMBO( NUM_SYM, DE_SLASH, &kp LS(N7), 10 3)
+
+      COMBO( NUM_SYM, DE_TILDE, &kp RA(RIGHT_BRACKET), 1 10)
+      COMBO( NUM_SYM, DE_PIPE, &kp RA(NON_US_BACKSLASH), 5 10)
+      COMBO( NUM_SYM, DE_GRAVE_2, &kp LS(EQUAL), 9 10)
+
+      COMBO( NUM_SYM, DE_HASH, &kp NON_US_HASH, 1 6)
+      COMBO( NUM_SYM, DE_AT, &kp RA(Q), 5 6)
+      COMBO( NUM_SYM, DE_PERCENT, &kp LS(N5), 9 6)
+
+      COMBO( NUM_SYM, DE_ASTERISK, &kp LS(RIGHT_BRACKET), 1 2)
+      COMBO( NUM_SYM, DE_AMPERSAND, &kp LS(N6), 5 2)
+      COMBO( NUM_SYM, DE_PARAGRAPH, &kp LS(N3), 9 2)
+
+
+      COMBO( NAV_FUNC, BOOTLOADER, &bootloader, 9 2)
+      COMBO( NAV_FUNC, RESET, &sys_reset, 5 2)
+
+      COMBO( NAV_FUNC, BT_SEL1, &bt BT_SEL 1, 2 3)
+      COMBO( NAV_FUNC, BT_NEXT, &bt BT_NXT, 6 3)
+      COMBO( NAV_FUNC, BT_PREV, &bt BT_PRV, 5 3)
+      COMBO( NAV_FUNC, BT_CLR, &bt BT_CLR, 9 3)
+
+      COMBO( NAV_FUNC, OUTPUT_USB, &out OUT_USB, 5 7)
+      COMBO( NAV_FUNC, OUTPUT_BLE, &out OUT_BLE, 6 7)
+
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -26,18 +125,18 @@
         };
 
         numbers_and_symbols_layer {
-          display-name = "NU_SY";
+          display-name = "NUM-SYM";
           bindings = <
-              &kp MINUS  &kp N7      &kp N8        &kp N9
+              &kp SLASH  &kp N7      &kp N8        &kp N9 /* us slash = de minus */
               &kp N0     &kp N4      &kp N5        &kp N6
-              &kp PLUS   &kp N1      &kp N2        &kp N3
+              &kp RBKT   &kp N1      &kp N2        &kp N3 /* us right bracket = de plus */
 
               &trans &trans &trans
           >;
         };
 
         navigation_and_functions_layer {
-          display-name = "NU_SY";
+          display-name = "NAV-FN";
           bindings = <
               &kp PG_UP  &kp DEL     &kp UP      &kp BACKSPACE
               &kp LGUI   &kp LEFT    &kp DOWN    &kp RIGHT
@@ -47,6 +146,7 @@
           >;
         };
 
+/*
         func {
           display-name = "CMD";
           bindings = <
@@ -57,8 +157,10 @@
             &trans          &none           &none
           >;
         };
+        */
     };
 
+/*
     conditional_layers {
       compatible = "zmk,conditional-layers";
       tri_layer {
@@ -66,5 +168,6 @@
             then-layer = < COMMAND >;
         };
     };
+*/
 
 };
