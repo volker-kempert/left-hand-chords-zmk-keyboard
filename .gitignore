@@ -1,5 +1,5 @@
 zephyr
 zmk
 modules
-build
+build*
 .west
