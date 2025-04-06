@@ -39,7 +39,8 @@ rm -rf build
 mkdir build
 west build -s zmk/app -b nice_nano_v2 -d build --  \
    -DZMK_CONFIG="$(pwd)/config" \
-   -DSHIELD="matrix15"
+   -DZMK_EXTRA_MODULES="$(pwd)/chord" \
+   -DSHIELD="chord_temper"
 ```
 
 The alternative shield with direct wiring is `direct15`

@@ -1,0 +1,2 @@
+config SHIELD_TEMPER
+    def_bool $(shields_list_contains,chord_temper)

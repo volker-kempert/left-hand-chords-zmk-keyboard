@@ -1,0 +1,26 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+#define DEFAULT  0
+
+
+/ {
+   // this key map only shows that keys are assigned
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+          display-name = "LETTER";
+          bindings = <
+              &kp D        &kp E       &kp F         &kp G  &kp P
+              &kp H        &kp I       &kp J         &kp K  &kp Q
+              &kp L        &kp M       &kp N         &kp O  &kp R
+
+              &kp A  &kp B  &kp C
+          >;
+        };
+    };
+};
