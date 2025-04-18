@@ -30,4 +30,4 @@ endchoice
 
 endif # LVGL
 
-endif # SHIELD_TEMPER
+endif # SHIELD_CHORD_TEMPER
