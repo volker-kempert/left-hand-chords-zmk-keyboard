@@ -45,4 +45,14 @@ west build -s zmk/app -b nice_nano_v2 -d build --  \
 
 The alternative shield with direct wiring is `direct15`
 
+## Hardware and other documentTion
+
+- [Temper PCB based chord keyboard](docs/temper-shield)
+
+## TODO
+
+- [ ] dev container
+- [ ] ci build via chord subfolder
+- [ ] measurement i2c of temper
+
 
