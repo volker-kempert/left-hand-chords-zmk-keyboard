@@ -1,6 +1,6 @@
 file_format: "1"
 id: direct15
-name: Direct15Keys
+name: Chord
 type: shield
 url: https://github.com/volker-kempert/left-hand-chords-zmk-keyboard
 requires: [pro_micro]

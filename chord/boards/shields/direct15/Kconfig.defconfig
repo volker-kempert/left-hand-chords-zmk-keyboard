@@ -1,7 +1,7 @@
 if SHIELD_DIRECT15
 
 config ZMK_KEYBOARD_NAME
-    default "Chords"
+    default "Chord"
 
 if ZMK_DISPLAY
 
