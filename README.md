@@ -3,6 +3,33 @@
 - Based on ZMK firmware
 - Layout: 4x3 keys for the fingers; 3 keys for the thumb
 
+## Why
+
+- Inspiration by guitar players playing cords with left hand
+- Right hand is free to operate the mouse touch pat or similar
+- Both hands can rest on their "familiar" input device and input
+  at full speed while you get feedback by spotting the changes on the
+  display.
+
+## Layout Considerations
+
+- Each finger operates only one column
+- Each column has only rest position (middle) plus one up and one down
+  in total 3 for minimal movements
+- A key press is either one key or simultaneously two keys at a time.
+- Index, middle and ring finger are almost autonomous controllable.
+- Pinky is quite often (except for guitar players) somehow linked to
+  ring finger
+- Thumb
+
+- Combinations
+- Ctrl - letter/number/symbol
+- Alt - letter/symbol
+- Shift - letter
+- Ctrl+Shift - letter
+- GUI+ Arrow keys
+- Ctrl+Alt+Del
+
 
 ## How to build locally
 
@@ -45,7 +72,7 @@ west build -s zmk/app -b nice_nano_v2 -d build --  \
 
 The alternative shield with direct wiring is `direct15`
 
-## Hardware and other documentTion
+## Hardware and other Documentation
 
 - [Temper PCB based chord keyboard](docs/temper-shield)
 
@@ -53,6 +80,7 @@ The alternative shield with direct wiring is `direct15`
 
 - [ ] dev container
 - [ ] ci build via chord subfolder
-- [ ] measurement i2c of temper
+- [ ] Program F keys in NAV_CMD layer - check double meaning GUI plus arrow keys
+- [ ] sticky behavior seems not to work across layers or in combos
 
 
